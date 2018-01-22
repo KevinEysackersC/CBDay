@@ -1,0 +1,76 @@
+﻿<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        Person overview
+    </div>
+    
+
+
+    <div class='panel-body'>
+        <div *ngIf="msg" role="alert" class="alert alert-info alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            {{msg}}
+        </div>
+        <div class='table-responsive'>
+            <div style="padding-bottom:10px"><button class="btn btn-primary" (click)="addPerson()">Add</button></div>
+            <div class="alert alert-info" role="alert" *ngIf="indLoading"><svg aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="spinner" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-spinner fa-w-16 fa-spin fa-lg"><path fill="currentColor" d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z" class=""></path></svg> Loading...</div>
+            <div *ngIf='persons && persons.length==0' class="alert alert-info" role="alert">No record found!</div>
+            <table class='table table-striped' *ngIf='persons && persons.length'>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>First name</th>
+                        <th>Date of birth</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let person of persons">
+                        <td>{{person.Name}}</td>
+                        <td>{{person.FirstName}}</td>
+                        <td><i class="fas fa-birthday-cake"></i> {{person.DateOfBirth | date: "dd-MM-yyyy"}}</td>
+                        <td>
+                            <button title="Edit" class="btn btn-primary" (click)="editPerson(person.Id)">Edit</button>
+                            <button title="Delete" class="btn btn-danger" (click)="deletePerson(person.Id)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<modal #modal (onOpen)="onOpen()">
+    <form novalidate (ngSubmit)="onSubmit(personFrm)" [formGroup]="personFrm">
+        <modal-header [show-close]="true">
+            <h4 class="modal-title">{{modalTitle}}</h4>
+        </modal-header>
+        <modal-body>
+
+            <div class="form-group">
+                <div>
+                    <span>First name*</span>
+                    <input type="text" class="form-control" placeholder="First Name" formControlName="FirstName" #FirstName>
+                </div>
+                <div>
+                    <span>Last name</span>
+                    <input type="text" class="form-control" placeholder="Last Name" formControlName="Name">
+                </div>
+                <div>
+                    <span>Date of birth*</span>
+                    <my-date-picker name="DateOfBirth" [options]="myDatePickerOptions" placeholder="dd-mm-yyyy"
+                                    formControlName="DateOfBirth"></my-date-picker>
+                </div>
+            </div>
+        </modal-body>
+        <modal-footer>
+            <div>
+                <a class="btn btn-default" (click)="modal.dismiss()">Cancel</a>
+                <button type="submit" [disabled]="personFrm.invalid" class="btn btn-primary">{{modalBtnTitle}}</button>
+            </div>
+        </modal-footer>
+    </form>
+</modal>

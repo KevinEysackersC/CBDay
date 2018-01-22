@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "CegekaBDayPlatform\DAL.csproj", "{36F519B9-0C7D-47CC-AA4B-BA2A5587E8A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{D07438AC-A880-4456-BDBF-F952454AFB6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angular", "Angular\Angular.csproj", "{0DB955BA-3022-4A3C-9FC4-9B095283317C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36F519B9-0C7D-47CC-AA4B-BA2A5587E8A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36F519B9-0C7D-47CC-AA4B-BA2A5587E8A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36F519B9-0C7D-47CC-AA4B-BA2A5587E8A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36F519B9-0C7D-47CC-AA4B-BA2A5587E8A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D07438AC-A880-4456-BDBF-F952454AFB6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D07438AC-A880-4456-BDBF-F952454AFB6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D07438AC-A880-4456-BDBF-F952454AFB6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D07438AC-A880-4456-BDBF-F952454AFB6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DB955BA-3022-4A3C-9FC4-9B095283317C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DB955BA-3022-4A3C-9FC4-9B095283317C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DB955BA-3022-4A3C-9FC4-9B095283317C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DB955BA-3022-4A3C-9FC4-9B095283317C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9CF526B6-11BC-418A-8C0B-E265D84F4F50}
+	EndGlobalSection
+EndGlobal
